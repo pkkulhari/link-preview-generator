@@ -6,7 +6,6 @@
   "author": "pkkulhari <praveen.kulhari07@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
     "heroku-postbuild": "npm install --prefix server && npm install --prefix client"
   },
   "engines": {
