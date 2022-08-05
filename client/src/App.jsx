@@ -2,7 +2,6 @@ import Spinner from './components/Spinner'
 import PreviewCard from './components/PreviewCard'
 import { useState, Fragment } from 'react'
 import ThemeToggler from './components/ThemeToggler'
-import { API_ENDPOINT } from './config'
 
 function App() {
   const [ogData, setOgData] = useState(null)
@@ -16,7 +15,7 @@ function App() {
     setOgData(null)
     setIsLoading(true)
 
-    const res = await fetch(`${API_ENDPOINT}?url=${url}`)
+    const res = await fetch(`/api?url=${url}`)
     const data = await res.json()
 
     setOgData(data)
