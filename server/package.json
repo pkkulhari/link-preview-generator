@@ -1,0 +1,19 @@
+{
+  "name": "link-preview-generator",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Praveen Kumar",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
