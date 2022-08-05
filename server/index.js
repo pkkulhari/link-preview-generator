@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const router = require('./router')
 const path = require('path')
+const port = process.env.PORT || 5000
 
 const app = express()
 const isProduction = process.env.NODE_ENV === 'production'
@@ -17,4 +18,4 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/dist/index.html'))
 })
 
-app.listen(8000, () => console.log(`Listening on ${8000}`))
+app.listen(port, () => console.log(`Listening on ${port}`))
