@@ -1,0 +1,11 @@
+{
+  "name": "link-preview-generator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pkkulhari/link-preview-generator.git",
+  "author": "pkkulhari <praveen.kulhari07@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  }
+}
