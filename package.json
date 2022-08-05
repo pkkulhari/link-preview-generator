@@ -6,7 +6,8 @@
   "author": "pkkulhari <praveen.kulhari07@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "heroku-postbuild": "npm install --prefix server && npm install --prefix client"
+    "start": "node server/index.js",
+    "heroku-postbuild": "YARN_PRODUCTION=false yarn install --cwd client && yarn run build --cwd client && yarn install --cwd server"
   },
   "engines": {
     "node": ">=16.0.0"
