@@ -10,8 +10,7 @@ router.get('/', async (req, res) => {
 
   // Validation
   if (!url) {
-    res.status(400).send({ error: { message: 'Missing url parameter' } })
-    return
+    return res.status(400).send({ error: { message: 'Missing url parameter' } })
   }
   url = getValidUrl(url)
 
@@ -29,6 +28,7 @@ router.get('/', async (req, res) => {
     description: getDescription($),
     domain: getDomain(url),
     image: await getImage($),
+    url,
   }
 
   res.send(obj)

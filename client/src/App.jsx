@@ -4,21 +4,22 @@ import { useState, Fragment } from 'react'
 import ThemeToggler from './components/ThemeToggler'
 
 function App() {
-  const [ogData, setOgData] = useState(null)
+  const [metadata, setMetadata] = useState(null)
   const [url, setUrl] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [isDarkMode, setDarkMode] = useState(false)
+  const [isDarkMode, setDarkMode] = useState(true)
 
-  const handleForm = async () => {
+  const handleForm = async (e) => {
+    e.preventDefault()
     if (!url) return
 
-    setOgData(null)
+    setMetadata(null)
     setIsLoading(true)
 
     const res = await fetch(`/api?url=${url}`)
     const data = await res.json()
 
-    setOgData(data)
+    setMetadata(data)
     setIsLoading(false)
   }
 
@@ -32,29 +33,32 @@ function App() {
             any note taking tool (Notion. MacDown, Word, etc.)
           </p>
 
-          <div className="flex flex-col md:flex-row gap-4 w-full mb-14">
+          <form
+            className="flex flex-col md:flex-row gap-4 w-full mb-14"
+            onSubmit={(e) => handleForm(e)}
+          >
             <input
-              type="url"
+              type="text"
               className="bg-gray-50 border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 px-4 outline-none shadow dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-slate-200 dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="E.g.: https://www.youtube.com/watch?v=JezatpCP9C0"
               onChange={(e) => setUrl(e.target.value)}
             />
             <button
+              type="submit"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-auto px-6 py-2.5 text-center shadow dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              onClick={handleForm}
             >
               Generate
             </button>
-          </div>
+          </form>
 
           {isLoading && <Spinner />}
 
-          {ogData && (
+          {metadata && (
             <Fragment>
-              {ogData?.error ? (
+              {metadata?.error ? (
                 <div className="text-red-600">💥 Oops! there was an error with your URL</div>
               ) : (
-                <PreviewCard ogData={ogData} />
+                <PreviewCard metadata={metadata} />
               )}
             </Fragment>
           )}

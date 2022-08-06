@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import domtoimage from 'dom-to-image'
 
-const PreviewCard = ({ ogData }) => {
+const PreviewCard = ({ metadata }) => {
   const cardRef = useRef()
 
   const handleDownloadImage = async () => {
@@ -13,19 +13,24 @@ const PreviewCard = ({ ogData }) => {
   }
 
   return (
-    <div className="max-w-lg border rounded-lg border-gray-200 shadow-lg relative dark:border-slate-700">
-      <div ref={cardRef}>
-        <img
-          src={ogData?.image && `data:image/png;base64,${ogData.image}`}
-          alt=""
-          className="w-full rounded-t-lg"
-        />
-        <div className="bg-gray-100 p-3 flex flex-col gap-1 dark:bg-slate-800">
-          <div className="uppercase">{ogData?.domain}</div>
-          <div className="font-semibold text-xl">{ogData?.title}</div>
-          <div>{ogData?.description}</div>
+    <div className="max-w-lg relative">
+      <a href={metadata.url} target="_blank">
+        <div
+          ref={cardRef}
+          className="border border-gray-200 dark:border-slate-700 shadow-lg rounded-lg overflow-hidden"
+        >
+          <img
+            src={metadata?.image && `data:image/png;base64,${metadata.image}`}
+            alt=""
+            className="w-full"
+          />
+          <div className="bg-gray-100 p-3 flex flex-col gap-1 dark:bg-slate-800">
+            <div className="uppercase">{metadata?.domain}</div>
+            <div className="font-semibold text-xl">{metadata?.title}</div>
+            <div>{metadata?.description}</div>
+          </div>
         </div>
-      </div>
+      </a>
       <button
         className="absolute -bottom-14 md:top-0 right-0 md:-right-14 p-2 bg-gray-200 rounded-full shadow-lg hover:bg-gray-300 h-fit dark:bg-slate-700 dark:hover:bg-slate-600"
         onClick={handleDownloadImage}

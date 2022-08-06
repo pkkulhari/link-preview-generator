@@ -2,7 +2,7 @@ const ThemeToggler = ({ isDarkMode, setDarkMode }) => {
   return (
     <button
       type="button"
-      className="text-gray-500 dark:text-gray-400 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none  rounded-lg text-sm p-2.5 h-fit absolute top-3 md:top-10 right-3 md:right-10"
+      className="text-gray-500 dark:text-gray-400 bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none  rounded-lg text-sm p-2.5 h-fit fixed top-3 md:top-10 right-3 md:right-10"
       onClick={() => setDarkMode(!isDarkMode)}
     >
       <svg
