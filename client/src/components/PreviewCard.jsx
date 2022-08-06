@@ -25,9 +25,15 @@ const PreviewCard = ({ metadata }) => {
             className="w-full"
           />
           <div className="bg-gray-100 p-3 flex flex-col gap-1 dark:bg-slate-800">
-            <div className="uppercase">{metadata?.domain}</div>
-            <div className="font-semibold text-xl">{metadata?.title}</div>
-            <div>{metadata?.description}</div>
+            <div className="uppercase">{metadata.domain}</div>
+            <div className="font-semibold text-xl">
+              {metadata.metaTags?.title || metadata.ogTags?.title || metadata.twitterTags?.title}
+            </div>
+            <div>
+              {metadata.metaTags?.description ||
+                metadata.ogTags?.description ||
+                metadata.twitterTags?.description}
+            </div>
           </div>
         </div>
       </a>

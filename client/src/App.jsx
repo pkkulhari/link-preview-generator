@@ -2,6 +2,7 @@ import Spinner from './components/Spinner'
 import PreviewCard from './components/PreviewCard'
 import { useState, Fragment } from 'react'
 import ThemeToggler from './components/ThemeToggler'
+import Analysis from './components/Analysis'
 
 function App() {
   const [metadata, setMetadata] = useState(null)
@@ -58,7 +59,10 @@ function App() {
               {metadata?.error ? (
                 <div className="text-red-600">💥 Oops! there was an error with your URL</div>
               ) : (
-                <PreviewCard metadata={metadata} />
+                <Fragment>
+                  <PreviewCard metadata={metadata} />
+                  <Analysis metadata={metadata} />
+                </Fragment>
               )}
             </Fragment>
           )}
