@@ -30,7 +30,7 @@ function App() {
         <div className="w-full max-w-4xl flex flex-col items-center">
           <h1 className="text-4xl font-bold mb-3 text-center">Link Preview Generator</h1>
           <p className="text-gray-800 text-center text-lg md:text-xl  mb-12 md:px-14 dark:text-slate-200">
-            Link previews like in Twitter/LinkedIn/Facebbok, but as downloadable images for use in
+            Link previews like in Twitter/LinkedIn/Facebook, but as downloadable images for use in
             any note taking tool (Notion. MacDown, Word, etc.)
           </p>
 
