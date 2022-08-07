@@ -5,10 +5,8 @@ import ListItem from './ListItem'
 const Analysis = ({ metadata }) => {
   const { metaTags, ogTags, twitterTags } = metadata
 
-  console.log(twitterTags)
-
   return (
-    <div className="flex flex-col gap-7 w-full mt-14">
+    <div className="flex flex-col gap-7 w-full mt-20 md:mt-14">
       <AnalysisCard
         title="Meta Tags"
         icon={Object.keys(metaTags).length !== 0 ? icons.checkMark : icons.crossMark}
