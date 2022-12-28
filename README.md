@@ -4,9 +4,9 @@ Link previews like in Twitter/LinkedIn/Facebook, but as downloadable images for 
 
 ### => **[Live Demo](https://link-preview-generator.onrender.com/)**
 
-## Screenshots
+## Preview
 
-![Screenshot](./assets/screenshot.png)
+![Screenshot](./assets/preview.gif)
 
 ## Features
 
