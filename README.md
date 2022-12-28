@@ -2,7 +2,7 @@
 
 Link previews like in Twitter/LinkedIn/Facebook, but as downloadable images for use in any note taking tool (Notion. MacDown, Word, etc.)
 
-### => **[Live Demo](https://link-preview-g.herokuapp.com/)**
+### => **[Live Demo](https://link-preview-generator.onrender.com/)**
 
 ## Screenshots
 
@@ -15,12 +15,20 @@ Link previews like in Twitter/LinkedIn/Facebook, but as downloadable images for 
 - **Analyse** - check if the link has basic meta tags or not (Important for SEO)
 - **Dark Mode** - choose your preferred theme (Dark or Light)
 
+## Technologes
+
+- Node.js
+- Express.js
+- React
+- Tailwind CSS
+- Vite
+
 ## API Reference
 
 -> Get metdata of a link
 
 ```http
-  GET https://link-preview-g.herokuapp.com/api?url=
+  GET https://link-preview-generator.onrender.com/api?url=
 ```
 
 | Parameter | Type     | Description           |
