@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server/index.js",
-    "build": "YARN_PRODUCTION=false yarn install --cwd client && yarn --cwd client build && yarn install --cwd server"
+    "build": "yarn install --cwd client && yarn --cwd client build && yarn install --cwd server"
   },
   "engines": {
     "node": ">=16.0.0"
